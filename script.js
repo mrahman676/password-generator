@@ -117,21 +117,32 @@ const combinationArray = [];
   //^^^^^^^^^^^^^ User will receive this alert is inputs NaN, a number > 128 and <8 ^^^^^^^
 
 
-    const lower = confirm("Are there are lowercase characters in your password?");
+    if (confirm("Are there are lowercase characters in your password?"));
 
-    const upper = confirm("Are there are uppercase characters in your password?");
+    combinationArray = combinationArray.concat(lowerCasedCharacters);
 
-    const numeric = confirm("Are there are numeric characters in your password?");
+    // if user confirms to use lowercase, lowercase characters will fill up new array //
 
-    const special = confirm("Are there are specialcase characters in your password?");
+    if (confirm("Are there are uppercase characters in your password?"));
 
-      if (lower || upper|| numeric || special) {
-      minimum = true;
-      }
+    combinationArray = combinationArray.concat(upperCasedCharacters);
 
-      else {
-        alert("At least one character type should be selected");
-      } 
+     // if user confirms to use uppercase, uppercase characters will fill up new array //
+
+    if (confirm("Are there are numeric characters in your password?"));
+
+    combinationArray = combinationArray.concat(numericCharacters);
+
+    // if user confirms to use numeric, numeric characters will fill up new array //
+
+    if (confirm("Are there are special characters in your password?"));
+
+    combinationArray = combinationArray.concat(specialCharacters);
+
+    // if user confirms to use special, special characters will fill up new array //
+
+    return true;
+    
     }
     
 
