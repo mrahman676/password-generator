@@ -91,6 +91,8 @@ const upperCasedCharacters = [
   'Z'
 ];
 
+
+
 // Function to prompt user for password options
 
   // Confirm that password is at least 8 characters but no more than 128
@@ -99,7 +101,7 @@ const upperCasedCharacters = [
 ///////////////////////////////////// FUNCTION PROMPTS /////////////////////////////////////////////
 
   function getPasswordOptions() {
-  
+
   combinationArray = [];
 
     //////////// INPUT CHARACTER LENGTH PROMPT ////////////////
@@ -235,12 +237,13 @@ const generateBtn = document.querySelector('#generate');
 
 function writePassword() {
   const criteria = getPasswordOptions();
-  const password = generatePassword(criteria);
 
-  if (password !== null) {
-  const passwordText = document.querySelector('#password');
-  passwordText.value = password;
-}
+  if(criteria) {
+    const password = generatePassword();
+    const passwordText = document.querySelector('#password');
+    passwordText.value = password;
+  }
+
 }
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
