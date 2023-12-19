@@ -89,33 +89,32 @@ const upperCasedCharacters = [
 ];
 
 // Function to prompt user for password options
+
+  // Confirm that password is at least 8 characters but no more than 128
+
 function getPasswordOptions() {
 
   while (true) {
 
-  const enter = prompt("Enter the number of characters you want the password to have" + "Remember that any password must have at least 8 characters and at most 128.");
+  const enter = prompt("Enter the number of characters you want the password to have" + "(Remember that any password must have at least 8 characters and at most 128.)");
   const charInput = parseInt(prompt);
 
-  if (charInput > 8 && charInput >= 128) {
+  if (charInput >= 8 && charInput <= 128) {
     alert("You entered: " + charInput);
     break;
   }
   else {
     alert("Error, please try again")
   }
-}
+  }
 
-getPasswordOptions();
+  const lower = prompt("Confirm there are lowercase characters in your password")
 
-  // Confirm that password is at least 8 characters but no more than 128
+  const upper = prompt("Confirm there are uppercase characters in your password")
 
-  // Confirm that there are lowercase characters in your password
+  const numeric = prompt("Confirm there are numeric characters in your password")
 
-    // Confirm that there are uppercase characters in your password
-
-      // Confirm that there are Numeric characters in your password
-
-        // Confirm that there are specialcase characters in your password
+  const special = prompt("Confirm there are specialcase characters in your password")
 
 }
 
@@ -142,6 +141,19 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // var L = prompt("How long should password would be?");
 
