@@ -91,6 +91,22 @@ const upperCasedCharacters = [
 // Function to prompt user for password options
 function getPasswordOptions() {
 
+  while (true) {
+
+  const enter = prompt("Enter the number of characters you want the password to have" + "Remember that any password must have at least 8 characters and at most 128.");
+  const charInput = parseInt(prompt);
+
+  if (charInput > 8 && charInput >= 128) {
+    alert("You entered: " + charInput);
+    break;
+  }
+  else {
+    alert("Error, please try again")
+  }
+}
+
+getPasswordOptions();
+
   // Confirm that password is at least 8 characters but no more than 128
 
   // Confirm that there are lowercase characters in your password
