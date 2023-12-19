@@ -1,3 +1,6 @@
+////////////////////////////// VARIABLES /////////////////////////////////////////////////
+
+
 // Array of special characters to be included in password
 const specialCharacters = [
   '@',
@@ -88,15 +91,21 @@ const upperCasedCharacters = [
   'Z'
 ];
 
+const combinationArray = [];
+
 // Function to prompt user for password options
 
   // Confirm that password is at least 8 characters but no more than 128
 
-function getPasswordOptions() {
 
-  // Ensuring input meets criteria for password character length
+///////////////////////////////////// FUNCTION PROMPTS /////////////////////////////////////////////
 
-  const enter = prompt("Enter the number of characters you want the password to have" + "(Remember that any password must have at least 8 characters and at most 128.)");
+  function getPasswordOptions() {
+
+
+    //////////// INPUT CHARACTER LENGTH PROMPT ////////////////
+
+  const enter = prompt("Enter the number of characters you want IN the password" + " It must be between 8 and 128 characters in length");
 
   const charInput = parseInt(enter);
 
@@ -105,7 +114,10 @@ function getPasswordOptions() {
     return false;
   }
 
-  // Ensuring input meets criteria for at least one character type
+
+
+
+  
 
     let minimum = false;
 
@@ -129,8 +141,10 @@ function getPasswordOptions() {
     }
 }
     
-  
-  
+
+///////////////////////////////////// FUNCTION RANDOM /////////////////////////////////////////////
+
+
 // Function for getting a random element from an array
 
 function getRandom(arr) {
@@ -144,13 +158,16 @@ function getRandom(arr) {
   return arr[randomChar];
 }
 
-
 // Function to generate password with user input
 
 // Add new combination of characters into an array dependent on user input
 
+
+///////////////////////////////////// FUNCTION GENERATE PASSWORD ///////////////////////////////////////// 
+
+
 function generatePassword(criteria) {
-const combination = [];
+;
 
 if (criteria.lower) {
   for (let i = 0; i < lowerCasedCharacters.length; i++) {
@@ -196,12 +213,14 @@ return password;
 
 }
 
-
 // Get references to the #generate element
 
 const generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
+
+
+///////////////////////////////////// FUNCTION PRINT PASSWORD /////////////////////////////////////////////
 
 
 function writePassword() {
@@ -212,32 +231,6 @@ function writePassword() {
   const passwordText = document.querySelector('#password');
   passwordText.value = password;
 }
-
 }
-
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// var L = prompt("How long should password would be?");
-
-// var plength = {
-
-//   length: L,
-//   upper:
-//   lower:
-//   special: 
-//   numeric: 
-
