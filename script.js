@@ -149,6 +149,8 @@ const upperCasedCharacters = [
 
     }
 
+    getRandom(combinationArray);
+
     return true;
 
     }
@@ -157,93 +159,37 @@ const upperCasedCharacters = [
 ///////////////////////////////////// FUNCTION RANDOM /////////////////////////////////////////////
 
 
-// Function for getting a random element from an array
-
-function getRandom(arr) {
-  if (getRandom === 0) {
-    alert("Error: No characters selected")
-    return
-  }
-  
-  var randomChar = Math.floor(Math.random() * arr.length);
-
-  return arr[randomChar];
-}
-
-// Function to generate password with user input
-
-// Add new combination of characters into an array dependent on user input
-
+// function getRandom(arr) {}
 
 ///////////////////////////////////// FUNCTION GENERATE PASSWORD ///////////////////////////////////////// 
 
 
-function generatePassword(criteria) {
-;
-
-if (criteria.lower) {
-  for (let i = 0; i < lowerCasedCharacters.length; i++) {
-    combination.push(lowerCasedCharacters[i]);
-}
-}
-
-if (criteria.upper) {
-  for (let i = 0; i < upperCasedCharacters.length; i++) {
-    combination.push(upperCasedCharacters[i]);
-}
-}
-
-if (criteria.numeric) {
-  for (let i = 0; i < numericCharacters.length; i++) {
-    combination.push(numericCharacters[i]);
-}
-}
-
-if (criteria.special) {
-  for (let i = 0; i < specialCharacters.length; i++) {
-    combination.push(specialCharacters[i]);
-}
-}
-
-if (combination.length === 0) {
-  alert("Error: No characters selected");
-  return;
-}
+function generatePassword() {
 
 let password = '';
 
-for (let i = 0; i < criteria.charInput; i++) {
-  const randomChar = getRandom(criteria);
-  if (randomChar !== null) {
-    password += randomChar;
-  } else {
-    return;
-  }
+for (let i = 0; i < charInput; i++) {
+  var randomChar = Math.floor(Math.random() * arr.length);
+      password = password + combinationArray[randomIndex]
 }
 
 return password;
-
 }
-
-// Get references to the #generate element
-
-const generateBtn = document.querySelector('#generate');
-
-// Write password to the #password input
-
 
 ///////////////////////////////////// FUNCTION PRINT PASSWORD /////////////////////////////////////////////
 
 
+
 function writePassword() {
   const criteria = getPasswordOptions();
+  const passwordText = document.querySelector('#password');
 
-  if(criteria) {
+  if (criteria) {
     const password = generatePassword();
-    const passwordText = document.querySelector('#password');
     passwordText.value = password;
   }
 
 }
-// Add event listener to generate button
+
+const generateBtn = document.querySelector('#generate');
 generateBtn.addEventListener('click', writePassword);
