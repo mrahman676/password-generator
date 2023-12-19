@@ -106,19 +106,34 @@ function getPasswordOptions() {
   else {
     alert("Error, please try again")
   }
+
   }
 
-  const lower = prompt("Confirm there are lowercase characters in your password")
+  while (true) {
 
-  const upper = prompt("Confirm there are uppercase characters in your password")
+  const lower = prompt("Are there are lowercase characters in your password?");
 
-  const numeric = prompt("Confirm there are numeric characters in your password")
+  const upper = prompt("Are there are uppercase characters in your password?");
 
-  const special = prompt("Confirm there are specialcase characters in your password")
+  const numeric = prompt("Are there are numeric characters in your password?");
+
+  const special = prompt("Are there are specialcase characters in your password?");
+
+ 
+
+    if (!lower === 0 || !upper === 0 || !numeric === 0 || !special === 0) {
+      break;
+    }
+    else {
+      alert("At least one character type should be selected");
+    }
+  }
+  
 
 }
 
 // Function for getting a random element from an array
+
 function getRandom(arr) {
   if (getRandom === 0) {
     alert("Error: No characters selected")
@@ -129,8 +144,13 @@ function getRandom(arr) {
   return arr[randomChar];
 }
 
+
 // Function to generate password with user input
+
+// 
 function generatePassword() {
+  getRandom()
+
 
 }
 
