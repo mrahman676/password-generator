@@ -109,19 +109,13 @@ const combinationArray = [];
 
   const charInput = parseInt(enter);
 
-  if (charInput < 8 || charInput > 128 || charInput === NaN) {
+  if (isNaN(charInput) || charInput > 128 || charInput < 8) {
     alert("Please enter a value between 8 and 128");
     return false;
   }
 
+  //^^^^^^^^^^^^^ User will receive this alert is inputs NaN, a number > 128 and <8 ^^^^^^^
 
-
-
-  
-
-    let minimum = false;
-
-    while (!minimum) {
 
     const lower = confirm("Are there are lowercase characters in your password?");
 
@@ -139,7 +133,6 @@ const combinationArray = [];
         alert("At least one character type should be selected");
       } 
     }
-}
     
 
 ///////////////////////////////////// FUNCTION RANDOM /////////////////////////////////////////////
