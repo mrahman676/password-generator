@@ -94,44 +94,49 @@ const upperCasedCharacters = [
 
 function getPasswordOptions() {
 
-  while (true) {
+  // Ensuring input meets criteria for password character length
+
+  let input = false;
+
+  while (!input) {
 
   const enter = prompt("Enter the number of characters you want the password to have" + "(Remember that any password must have at least 8 characters and at most 128.)");
-  const charInput = parseInt(prompt);
+
+  const charInput = parseInt(enter);
 
   if (charInput >= 8 && charInput <= 128) {
     alert("You entered: " + charInput);
-    break;
+    input = true;
   }
   else {
     alert("Error, please try again")
   }
+}
+  // Ensuring input meets criteria for at least one character type
 
-  }
+    let minimum = false;
 
-  while (true) {
+    while (!minimum) {
 
-  const lower = prompt("Are there are lowercase characters in your password?");
+    const lower = confirm("Are there are lowercase characters in your password?");
 
-  const upper = prompt("Are there are uppercase characters in your password?");
+    const upper = confirm("Are there are uppercase characters in your password?");
 
-  const numeric = prompt("Are there are numeric characters in your password?");
+    const numeric = confirm("Are there are numeric characters in your password?");
 
-  const special = prompt("Are there are specialcase characters in your password?");
+    const special = confirm("Are there are specialcase characters in your password?");
 
- 
+      if (lower || upper|| numeric || special) {
+      minimum = true;
+      }
 
-    if (!lower === 0 || !upper === 0 || !numeric === 0 || !special === 0) {
-      break;
+      else {
+        alert("At least one character type should be selected");
+      } 
     }
-    else {
-      alert("At least one character type should be selected");
-    }
+    
   }
   
-
-}
-
 // Function for getting a random element from an array
 
 function getRandom(arr) {
@@ -149,7 +154,27 @@ function getRandom(arr) {
 
 // 
 function generatePassword() {
-  getRandom()
+  if (lower) {
+    lowerCasedCharacters[randomChar];
+    return;
+  }
+
+  if (upper) {
+    upperCasedCharacters[randomChar];
+    return;
+  }
+
+  if (numeric) {
+    numericCharacters[randomChar];
+    return;
+  }
+
+  if (special) {
+    specialCharacters[randomChar];
+    return;
+  }
+
+// if lower character is confirmed, generate a random lowercase character
 
 
 }
