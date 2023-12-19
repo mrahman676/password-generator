@@ -134,16 +134,14 @@ const upperCasedCharacters = [
     }
 
     if (confirm("Are there numeric characters in your password?")) {
-
-    combinationArray = combinationArray.concat(numericCharacters);
+      combinationArray = combinationArray.concat(numericCharacters);
 
     // if user confirms to use numeric, numeric characters will fill up new array //
-
     }
 
-    if (confirm("Are there are special characters in your password?")){
 
-    combinationArray = combinationArray.concat(specialCharacters);
+    if (confirm("Are there are special characters in your password?")){
+      combinationArray = combinationArray.concat(specialCharacters);
 
     // if user confirms to use special, special characters will fill up new array //
 
