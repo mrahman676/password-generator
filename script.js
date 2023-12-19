@@ -134,6 +134,8 @@ function getPasswordOptions() {
         alert("At least one character type should be selected");
       } 
     }
+
+    return { lower, upper, numeric, special };
     
   }
   
@@ -142,6 +144,7 @@ function getPasswordOptions() {
 function getRandom(arr) {
   if (getRandom === 0) {
     alert("Error: No characters selected")
+    return
   }
   
   var randomChar = Math.floor(Math.random() * arr.length);
@@ -153,31 +156,41 @@ function getRandom(arr) {
 // Function to generate password with user input
 
 // 
-function generatePassword() {
-  if (lower) {
-    lowerCasedCharacters[randomChar];
-    return;
-  }
+function generatePassword(criteria) {
+const combination = [];
 
-  if (upper) {
-    upperCasedCharacters[randomChar];
-    return;
-  }
+if (criteria.lower) {
+  for (let i = 0; i < lowerCasedCharacters.length; i++) {
+    combination.push(lowerCasedCharacters[i]);
+}
+}
 
-  if (numeric) {
-    numericCharacters[randomChar];
-    return;
-  }
+if (criteria.upper) {
+  for (let i = 0; i < upperCasedCharacters.length; i++) {
+    combination.push(upperCasedCharacters[i]);
+}
+}
 
-  if (special) {
-    specialCharacters[randomChar];
-    return;
-  }
+if (criteria.numeric) {
+  for (let i = 0; i < numericCharacters.length; i++) {
+    combination.push(numericCharacters[i]);
+}
+}
+
+if (criteria.special) {
+  for (let i = 0; i < specialCharacters.length; i++) {
+    combination.push(lowerCasedCharacters[i]);
+}
+}
+
+
+
+}
 
 // if lower character is confirmed, generate a random lowercase character
 
 
-}
+
 
 // Get references to the #generate element
 const generateBtn = document.querySelector('#generate');
