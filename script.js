@@ -91,8 +91,6 @@ const upperCasedCharacters = [
   'Z'
 ];
 
-const combinationArray = [];
-
 // Function to prompt user for password options
 
   // Confirm that password is at least 8 characters but no more than 128
@@ -101,15 +99,15 @@ const combinationArray = [];
 ///////////////////////////////////// FUNCTION PROMPTS /////////////////////////////////////////////
 
   function getPasswordOptions() {
-
+  
+  combinationArray = [];
 
     //////////// INPUT CHARACTER LENGTH PROMPT ////////////////
 
   const enter = prompt("Enter the number of characters you want IN the password" + " It must be between 8 and 128 characters in length");
-
   const charInput = parseInt(enter);
 
-  if (isNaN(charInput) || charInput > 128 || charInput < 8) {
+  if (isNaN(enter) || enter > 128 || enter < 8) {
     alert("Please enter a value between 8 and 128");
     return false;
   }
@@ -117,32 +115,40 @@ const combinationArray = [];
   //^^^^^^^^^^^^^ User will receive this alert is inputs NaN, a number > 128 and <8 ^^^^^^^
 
 
-    if (confirm("Are there are lowercase characters in your password?"));
+    if (confirm("Are there are lowercase characters in your password?")) {
 
     combinationArray = combinationArray.concat(lowerCasedCharacters);
-
+    
     // if user confirms to use lowercase, lowercase characters will fill up new array //
 
-    if (confirm("Are there are uppercase characters in your password?"));
+    }
+
+    if (confirm("Are there are uppercase characters in your password?")) {
 
     combinationArray = combinationArray.concat(upperCasedCharacters);
 
      // if user confirms to use uppercase, uppercase characters will fill up new array //
 
-    if (confirm("Are there are numeric characters in your password?"));
+    }
+
+    if (confirm("Are there numeric characters in your password?")) {
 
     combinationArray = combinationArray.concat(numericCharacters);
 
     // if user confirms to use numeric, numeric characters will fill up new array //
 
-    if (confirm("Are there are special characters in your password?"));
+    }
+
+    if (confirm("Are there are special characters in your password?")){
 
     combinationArray = combinationArray.concat(specialCharacters);
 
     // if user confirms to use special, special characters will fill up new array //
 
+    }
+
     return true;
-    
+
     }
     
 
