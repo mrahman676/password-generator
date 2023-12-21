@@ -159,6 +159,11 @@ function getRandom(arr) {
 // Function to generate password with user input
 function generatePassword() {
 
+  const options = getPasswordOptions();
+  let characters1 = [];
+  let Characters2 = [];
+  let NewPassword = '';
+
 }
 
 // Get references to the #generate element
