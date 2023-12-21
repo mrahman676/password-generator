@@ -125,10 +125,10 @@ const upperCasedCharacters = [
       }
     
 
-  let lower = confirm("Do you want lowercase characters in your password?");
-  let upper = confirm("Do you want uppercase characters in your password?");
-  let numeric = confirm("Do you want numeric characters in your password?");
-  let special = confirm("Do you want special characters in your password?");
+  const lower = confirm("Do you want lowercase characters in your password?");
+  const upper = confirm("Do you want uppercase characters in your password?");
+  const numeric = confirm("Do you want numeric characters in your password?");
+  const special = confirm("Do you want special characters in your password?");
 
 
   while (!(lower || !upper || !numeric || !special)) {
@@ -140,7 +140,16 @@ const upperCasedCharacters = [
     numeric = confirm("Do you want numeric characters in your password?");
     special = confirm("Do you want special characters in your password?");
   }
+
+  return {
+    length: length,
+    lower: lower,
+    upper: upper,
+    numeric: numeric,
+    special: special
+  };
 }
+
 
 
 // Function for getting a random element from an array
