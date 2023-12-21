@@ -195,7 +195,16 @@ function generatePassword() {
     characters2.push(getRandom(specialCharacters));
 
   }
-  
+
+  for (let i = 0; i < options.length - characters2.length; i++) {
+    const randomC = getRandom(characters1);
+    NewPassword = NewPassword + randomC;
+  }
+
+  NewPassword = NewPassword + characters2.join('');
+
+
+  return NewPassword;
 }
 
 // Get references to the #generate element
