@@ -125,13 +125,13 @@ const upperCasedCharacters = [
       }
     
 
-  const lower = confirm("Do you want lowercase characters in your password?");
-  const upper = confirm("Do you want uppercase characters in your password?");
-  const numeric = confirm("Do you want numeric characters in your password?");
-  const special = confirm("Do you want special characters in your password?");
+  let lower = confirm("Do you want lowercase characters in your password?");
+  let upper = confirm("Do you want uppercase characters in your password?");
+  let numeric = confirm("Do you want numeric characters in your password?");
+  let special = confirm("Do you want special characters in your password?");
 
 
-  while (!(lower || !upper || !numeric || !special)) {
+  while (!(lower || upper || numeric || special)) {
 
     alert("A password requires at least one character type");
 
