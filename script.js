@@ -150,11 +150,10 @@ const upperCasedCharacters = [
   };
 }
 
-
-
 // Function for getting a random element from an array
 function getRandom(arr) {
-
+  const randomI = Math.floor(Math.random() * arr.length);
+  return arr[randomI];
 }
 
 // Function to generate password with user input
