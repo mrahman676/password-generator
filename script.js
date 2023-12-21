@@ -91,103 +91,59 @@ const upperCasedCharacters = [
   'Z'
 ];
 
+// Employee can use to generate a random password based on criteria they’ve selected (Criteria must dictate the type of password generated for user)
 
+// For criteria to dictate password, if user selects lowercase, we want to get elements from lowercase array and so on. 
+
+// We can create a condition where if a user creates a password based off one criteria to access that array. But if they want to use two we can create a new array which concatentates both arrays. We can have various options for new arrays based on which criteria the user wants. 
+
+// Password is generated when the button is clicked (function writepassword() will write the new password and links to buttom)
+
+// Prompt user to input number of characters of password they want, put condition in that ensures user enters value between 8 and 128
+
+// Create confirms that ask user if they want Lowercase, Uppercase, Numeric or Special characters in their password.
+
+// User input must work in operation and be validated by end result
+
+// One character type should be selected for password to generate
+
+// Once all prompts complete, the new password must be shown on page
 
 // Function to prompt user for password options
 
   // Confirm that password is at least 8 characters but no more than 128
 
 
-///////////////////////////////////// FUNCTION PROMPTS /////////////////////////////////////////////
-
   function getPasswordOptions() {
+  // Start with the prompts //
 
-  combinationArray = [];
+  const length = parseInt(prompt("Enter the number of characters you want in the password" + " It must be between 8 and 128 characters in length"))
 
-    //////////// INPUT CHARACTER LENGTH PROMPT ////////////////
-
-  const enter = prompt("Enter the number of characters you want IN the password" + " It must be between 8 and 128 characters in length");
-  const charInput = parseInt(enter);
-
-  if (isNaN(enter) || enter > 128 || enter < 8) {
-    alert("Please enter a value between 8 and 128");
-    return false;
-  }
-
-  //^^^^^^^^^^^^^ User will receive this alert is inputs NaN, a number > 128 and <8 ^^^^^^^
-
-
-    if (confirm("Are there are lowercase characters in your password?")) {
-
-    combinationArray = combinationArray.concat(lowerCasedCharacters);
-    
-    // if user confirms to use lowercase, lowercase characters will fill up new array //
-
+      while (isNaN(length) || length < 8 || length > 128) {
+        alert("Error: Please Try Again");
+      }
     }
 
-    if (confirm("Are there are uppercase characters in your password?")) {
+// Function for getting a random element from an array
+function getRandom(arr) {
 
-    combinationArray = combinationArray.concat(upperCasedCharacters);
+}
 
-     // if user confirms to use uppercase, uppercase characters will fill up new array //
-
-    }
-
-    if (confirm("Are there numeric characters in your password?")) {
-      combinationArray = combinationArray.concat(numericCharacters);
-
-    // if user confirms to use numeric, numeric characters will fill up new array //
-    }
-
-
-    if (confirm("Are there are special characters in your password?")){
-      combinationArray = combinationArray.concat(specialCharacters);
-
-    // if user confirms to use special, special characters will fill up new array //
-
-    }
-
-    getRandom(combinationArray);
-
-    return true;
-
-    }
-    
-
-///////////////////////////////////// FUNCTION RANDOM /////////////////////////////////////////////
-
-
-// function getRandom(arr) {}
-
-///////////////////////////////////// FUNCTION GENERATE PASSWORD ///////////////////////////////////////// 
-
-
+// Function to generate password with user input
 function generatePassword() {
 
-let password = '';
-
-for (let i = 0; i < charInput; i++) {
-  var randomChar = Math.floor(Math.random() * arr.length);
-      password = password + combinationArray[randomIndex]
 }
 
-return password;
-}
+// Get references to the #generate element
+const generateBtn = document.querySelector('#generate');
 
-///////////////////////////////////// FUNCTION PRINT PASSWORD /////////////////////////////////////////////
-
-
-
+// Write password to the #password input
 function writePassword() {
-  const criteria = getPasswordOptions();
+  const password = generatePassword();
   const passwordText = document.querySelector('#password');
 
-  if (criteria) {
-    const password = generatePassword();
-    passwordText.value = password;
-  }
-
+  passwordText.value = password;
 }
 
-const generateBtn = document.querySelector('#generate');
+// Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
