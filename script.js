@@ -121,6 +121,7 @@ const upperCasedCharacters = [
 
       while (isNaN(length) || length < 8 || length > 128) {
         alert("Error: Please Try Again");
+        length = parseInt(prompt("Enter the number of characters you want in the password" + " It must be between 8 and 128 characters in length"))
       }
     }
 
