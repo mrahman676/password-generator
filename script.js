@@ -161,9 +161,41 @@ function generatePassword() {
 
   const options = getPasswordOptions();
   let characters1 = [];
-  let Characters2 = [];
+  let characters2 = [];
   let NewPassword = '';
 
+  if (options.lower) {
+
+    characters1 = characters1.concat(lowerCasedCharacters);
+
+    characters2.push(getRandom(lowerCasedCharacters));
+
+  }
+
+  if (options.upper) {
+
+    characters1 = characters1.concat(upperCasedCharacters);
+
+    characters2.push(getRandom(upperCasedCharacters));
+
+  }
+
+  if (options.numeric) {
+
+    characters1 = characters1.concat(numericCharacters);
+
+    characters2.push(getRandom(numericCharacters));
+
+  }
+
+  if (options.special) {
+
+    characters1 = characters1.concat(specialCharacters);
+
+    characters2.push(getRandom(specialCharacters));
+
+  }
+  
 }
 
 // Get references to the #generate element
