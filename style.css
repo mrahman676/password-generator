@@ -98,7 +98,7 @@ header {
 
 button[disabled] {
   cursor: default;
-  background: hsla(57, 100%, 50%, 0.744);
+  background: hsla(57, 100%, 50%, 0.744); 
 } 
 
 .float-right {
